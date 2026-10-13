@@ -22,8 +22,8 @@ namespace ModNamespace
     public class Plugin : BaseUnityPlugin
     {
         public const string ModGUID = "com.lesothedoes.cuCig";
-        public const string ModName = "Adds a soothing cig"; // To change .dll name, change the name in vars.targets
-        public const string ModVersion = "1.0.1";
+        public const string ModName = "cuCig"; // To change .dll name, change the name in vars.targets
+        public const string ModVersion = "1.0.2";
 
         internal static new ManualLogSource Logger;
         private readonly Harmony _harmony = new(ModGUID);
@@ -100,6 +100,14 @@ namespace ModNamespace
                     body.bloodPressure += 20f;
                     body.heartRate += 20f;
                     item.condition -= 0.25f;
+                    body.respiratoryRate += 0.9f;
+                    body.stamina += 1f;
+                    body.energy += 1f;
+                    body.bloodOxygen -= 0.2f;
+                    body.caffeinated += 2.0f;
+                    body.adrenaline += 1f;
+                    body.temporarySlowdown -= 1f;
+                    body.dirtyness += 5f;
                     //body.ignoreDepression = true;
                     Sound.Play("eatCrunch", body.transform.position);
                 }
