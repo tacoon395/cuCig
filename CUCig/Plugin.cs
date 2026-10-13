@@ -29,6 +29,7 @@ namespace ModNamespace
         private readonly Harmony _harmony = new(ModGUID);
         public static Plugin Instance { get; private set; } = null!;
 
+        private Sprite cucigSprite;
         public void Awake()
         {
             Logger = base.Logger;
@@ -37,6 +38,7 @@ namespace ModNamespace
             _harmony.PatchAll();
             Logger.LogInfo($"Plugin {ModName} is loaded!");
 
+            cucigSprite = AssetLoader.LoadEmbeddedSprite("images.CUNKcigarette.png");
             DoStuff();
             ContentReloadManager.EnableHotReload(ModGUID); // Required for hot reload, put any registry registrations in the RegisterReloadable method below
             RegisterReloadable();
