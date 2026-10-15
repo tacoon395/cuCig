@@ -24,7 +24,7 @@ namespace ModNamespace
     {
         public const string ModGUID = "com.lesothedoes.cuCig";
         public const string ModName = "cuCig"; // To change .dll name, change the name in vars.targets
-        public const string ModVersion = "1.0.3";
+        public const string ModVersion = "1.0.3.1";
 
         internal static new ManualLogSource Logger;
         private readonly Harmony _harmony = new(ModGUID);
@@ -111,7 +111,7 @@ namespace ModNamespace
                     //real blood pressure increase is 10-20mmHg, but we multiply by 0.25 to make it fit condition going down by 0.25
                     body.bloodPressure += UnityEngine.Random.Range(10f, 20f) * 0.25f;
                     //real heartrate increase is 10-15bpm, but we multiply by 0.25 to make it fit condition going down by 0.25
-                    body.heartRate = UnityEngine.Random.Range(10f, 15f) * 0.25f;
+                    body.heartRate += UnityEngine.Random.Range(10f, 15f) * 0.25f;
                     item.condition -= 0.25f;
                     body.respiratoryRate += 15f;
                     //lungs need to be lowered
