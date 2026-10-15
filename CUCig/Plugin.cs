@@ -24,7 +24,7 @@ namespace ModNamespace
     {
         public const string ModGUID = "com.lesothedoes.cuCig";
         public const string ModName = "cuCig"; // To change .dll name, change the name in vars.targets
-        public const string ModVersion = "1.0.3.1";
+        public const string ModVersion = "1.0.3.2";
 
         internal static new ManualLogSource Logger;
         private readonly Harmony _harmony = new(ModGUID);
@@ -93,8 +93,8 @@ namespace ModNamespace
                 decayMinutes = 280f,
                 tags = "cangetwet,medicine",
                 rec = new Recognition(2),
-                SpriteScale = 1f,
-                SpriteScaleDimensions = (14f, 14f, true),
+                //SpriteScale = 0.25f,
+                SpriteScaleDimensions = (8f, 8f, true),
                 SpawnFrequency = 1,
                 DropPool = DropPool.All | DropPool.AllTraders,
                 useAction = (body, item) =>
